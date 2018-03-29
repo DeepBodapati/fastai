@@ -4,6 +4,7 @@ alias aws-ip='export instanceIp=`aws ec2 describe-instances --filters "Name=inst
 alias aws-ssh='ssh -i ~/.ssh/aws-key-fast-ai.pem ubuntu@$instanceIp -L8888:localhost:8888'
 alias aws-stop='aws ec2 stop-instances --instance-ids $instanceId'
 alias aws-state='aws ec2 describe-instances --instance-ids $instanceId --query "Reservations[0].Instances[0].State.Name"'
+alias pps-ssh='ssh paperspace@64.62.141.252 -L8888:localhost:8888'
 
 
 if [[ `uname` == *"CYGWIN"* ]]

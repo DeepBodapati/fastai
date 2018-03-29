@@ -39,7 +39,7 @@ shopt -s histappend
 PROMPT_COMMAND='history -a'
 
 # Allow ctrl-S for history navigation (with ctrl-R)
-stty -ixon
+[[ $- == *i* ]] && stty -ixon
 
 # Ignore case on auto-completion
 # Note: bind used instead of sticking these in .inputrc
@@ -726,7 +726,7 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/home/ubuntu/src/caffe2/build:/h
 export PATH=~/src/anaconda3/bin:$PATH
 source activate fastai
 
-if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ] && [[ $- == *i* ]]; then
 	
 	tmux has-session -t ssh_tmux 2>/dev/null
 	
